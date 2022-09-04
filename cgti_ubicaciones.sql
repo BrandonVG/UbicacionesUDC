@@ -265,3 +265,17 @@ CREATE TABLE `planteles_dependencias`(
     s_pronad VARCHAR(70),
     r_id VARCHAr(70)
 );
+
+CREATE TABLE sitio_usuario(
+    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `url` VARCHAR(70),
+    `titulo` varchar(70),
+    `activo` boolean,
+    `correo` varchar(70),
+    `id_sitio` int,
+    `rol` int,
+    `tipo` int,
+    `reconocido` varchar(70),
+    `subdominio` varchar(70),
+    `permiso` int,
+    `s_delegacion` varchar(70))ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;

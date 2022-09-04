@@ -19,17 +19,17 @@
         ?>
 			</ol>
 	  </div>
-	  <!--div id="sesion">
+	  <div id="sesion">
       <ol class="breadcrumb">
-	      <?php if($as->isAuthenticated()) { ?> <!--Validar sesión
+	      <?php if($as->isAuthenticated()) { ?> <!--Validar sesiÃ³n-->
 		      <li>Bienvenido(a):</li>
-	        <li class="user-name"><?php //echo $_SESSION['uNombre']; ?></li>
+	        <li class="user-name"><?php echo $_SESSION['uNombre']; ?></li>
 	        <li><a href="<?php //echo $url.'logout.php'; ?>">Salir</a></li>
 	      <?php } else {
-          //echo '<li> <a href="'.$url.'login.php?urlAnterior='.$_SERVER['REQUEST_URI'].'">Iniciar sesión</a> </li>';
+          echo '<li> <a href="'.$url.'login.php?urlAnterior='.$_SERVER['REQUEST_URI'].'">Iniciar sesiÃ³n</a> </li>';
         } ?>
 			</ol>
-	  </div-->
+	  </div>
 	</div>
 </section>
 <section class="page-header">
