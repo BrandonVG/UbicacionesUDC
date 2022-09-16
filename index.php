@@ -10,7 +10,7 @@
   require_once(VIEW_PATH.'header.view.php');
   if(!count($_GET)){
     $ubicaciones = Ubicacion::getAllForIndex();
-    var_dump($ubicaciones);
+    
   } 
   else if(isset($_GET['sitio'])) {
     try {

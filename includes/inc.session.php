@@ -8,8 +8,7 @@
 		
 	require_once(MODEL_PATH.'usuario.model.php');
 
-	$as->requireAuth();
-	$attributes = $as->getAttributes();
+	$as->requireAuth();	
 	   
 	$attributes = $as->getAttributes();
 	$_SESSION['uCorreo'] = $attributes['uCorreo'][0];

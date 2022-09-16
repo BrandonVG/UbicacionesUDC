@@ -21,12 +21,12 @@
 	  </div>
 	  <div id="sesion">
       <ol class="breadcrumb">
-	      <?php if($as->isAuthenticated()) { ?> <!--Validar sesiÃ³n-->
+	      <?php if($as->isAuthenticated()) { ?> <!--Validar sesión-->
 		      <li>Bienvenido(a):</li>
 	        <li class="user-name"><?php echo $_SESSION['uNombre']; ?></li>
 	        <li><a href="<?php //echo $url.'logout.php'; ?>">Salir</a></li>
 	      <?php } else {
-          echo '<li> <a href="'.$url.'login.php?urlAnterior='.$_SERVER['REQUEST_URI'].'">Iniciar sesiÃ³n</a> </li>';
+          echo '<li> <a href="'.$url.'login.php?urlAnterior='.$_SERVER['REQUEST_URI'].'">Iniciar sesión</a> </li>';
         } ?>
 			</ol>
 	  </div>
@@ -39,7 +39,7 @@
 </section>
 <div class="container c-principal">
   <div class="row p-contenido">
-      <div class="col-xl-3 col-lg-4 col-md-4 col-xs-12 sidebar" id='sidebar'>
+      <div class="col-xl-3 col-lg-4 col-md-4 col-xs-12 sidebar" id="sidebar">
 	      <h2>Men&uacute;</h2>
 	      <div id="navcontainer">
 	        <ul id="navlist">
@@ -66,13 +66,13 @@
                   <p href="#">Validador</p>
                   <ul id="navlist">
                     <li>
-                      <a href="<?php echo $url.$_SESSION['url']; ?>/todas-validador">
+                      <a href="<?php echo $url.$_SESSION['url'].'/todas-validador'; ?>">
                       Todas</a>
                     </li>
                   </ul>
                   <ul id="navlist">
                     <li>
-                      <a href="<?php echo $url.$_SESSION['url']; ?>/validar">
+                      <a href="<?php echo $url.$_SESSION['url'].'/validar'; ?>">
                       Pendientes por validar</a>
                     </li>
                   </ul>
@@ -87,10 +87,10 @@
                    <p href="#">Editor</p>
                    <ul id="navlist">
                      <li>
-                       <a href="<?php echo $url.$_SESSION['url']; ?>/editar">
+                       <a href="<?php echo $url.$_SESSION['url'].'/editar'; ?>">
                        Ver todas</a>
                      </li>
-                      <li><a href="<?php echo $url.$_SESSION['url']; ?>/crear-ubicacion">Crear</a></li>
+                      <li><a href="<?php echo $url.$_SESSION['url'].'/crear-ubicacion'; ?>">Crear</a></li>
                    </ul>
                 </li>
               <?php  

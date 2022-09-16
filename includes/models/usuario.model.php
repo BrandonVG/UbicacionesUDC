@@ -67,7 +67,7 @@
     }
 
     public static  function getInfoFromFederada($correo, $sitio) {
-      $sql = "SELECT * FROM v_dependencia_usuarios WHERE correo = '".$correo."'"; //AND url = '".$sitio."'";
+      $sql = "SELECT * FROM v_dependencia_usuarios WHERE correo = '".$correo."'AND url = '".$sitio."'";
 
       return self::getObjectBySql($sql);
     }
@@ -84,7 +84,7 @@
       return self::getObjectBySql($sql);
     }
 
-    //MÃ©todo usado para obtener el id de un usuario cuando se va a guardar una acciÃ³n en el log
+    //Método usado para obtener el id de un usuario cuando se va a guardar una acción en el log
     public static function getIdByCorreo($correo, $id_sitio) {
       $sql = "SELECT id FROM v_dependencia_usuarios WHERE correo = '".$correo."' AND id_sitio = ".$id_sitio;
 

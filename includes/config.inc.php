@@ -3,7 +3,7 @@
 //Configuración de la federación
 defined('EN_PRODUCCION') ? NULL : define('EN_PRODUCCION', false);
 defined('EN_TESTING') ? NULL : define('EN_TESTING', true);
-$SamlLibrary = EN_PRODUCCION ? "/simplesamlphp/lib/_autoload.php" : realpath("C:/xampp/htdocs/simplesamlphp/lib/_autoload.php");
+$SamlLibrary = EN_PRODUCCION ? "/simplesamlphp/lib/_autoload.php" : "/simplesamlphp/lib/_autoload.php";
 $saml_source = EN_PRODUCCION ? 'ubicaciones' : 'desarrollo4sistemas';
 
 //Definición de variable global

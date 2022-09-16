@@ -2,7 +2,7 @@
 	<style> 
 		.bootstrap-tagsinput {width:? 100% !important; }
 		#sidebar {
-			display: none
+			/*display: none*/
 		}
 		#tags  {
 			margin-bottom: 15px;
