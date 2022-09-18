@@ -63,7 +63,7 @@
       return $affected_rows;
     }
 
-    public function getAllActive() {
+    public static function getAllActive() {
       $sql = "SELECT * FROM actividades WHERE estatus = 1";
 
       return self::getArrayBySql($sql); 

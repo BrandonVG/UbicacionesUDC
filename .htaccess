@@ -1,0 +1,31 @@
+Order deny,allow
+Allow from 148.213
+Allow from 127.0.0.1
+Allow from 177.242
+
+RewriteEngine On
+RewriteRule ^u/([0-9]+).json$ api/ubicacion.php?id=$1 [NC,L]
+RewriteRule ^(api)/equipamiento$ $1/equipamiento.php [NC,L]
+RewriteRule ^(api)/dirigido$ $1/dirigido.php [NC,L]
+
+
+RewriteRule ^([A-Za-z0-9]+)$ index.php?sitio=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/$ index.php?sitio=$1 [NC,L]
+
+RewriteRule ^ver-ubicacion/([0-9]+)$ ver_ubicacion.php?id=$1 [NC,L]
+RewriteRule ^embebido-ubicacion/([0-9]+)$ embebido.php?id=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/crear-ubicacion$ crear_ubicacion.php?sitio=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/editar-ubicacion/([0-9]+)$ editar_ubicacion.php?sitio=$1&id=$2 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/editar$ editar.php?sitio=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/todas-validador$ todas_validador.php?sitio=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/validar$ validar.php?sitio=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/lista$ lista.php?sitio=$1 [NC,L]
+
+
+RewriteRule ^([A-Za-z0-9]+)/actividades$ actividades.php?sitio=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/equipamiento$ equipamiento.php?sitio=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/dirigido$ dirigido.php?sitio=$1 [NC,L]
+RewriteRule ^([A-Za-z0-9]+)/tipos-ubicaciones$ tipos-ubicaciones.php?sitio=$1 [NC,L]
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^.]+)$ $1.php [NC,L]

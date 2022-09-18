@@ -57,7 +57,7 @@
 			return self::executeQuery($sql, $this->nombre, intval($this->estatus), intval($this->id));
 		}
 
-		public function getAllActive() {
+		public static function getAllActive() {
 			$sql = "SELECT * FROM dirigido WHERE estatus = 1";
 
 			return self::getArrayBySql($sql);
