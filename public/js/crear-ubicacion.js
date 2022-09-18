@@ -92,6 +92,36 @@ $('#inputImagen').change(function(event) {
   reader.readAsDataURL(input.files[0])
 });
 
+//Agregar nuevo dirigido
+$('#btnOtroDirig').on('click', () =>{
+  var newDirig = get('txtOtroDirig');
+  if(newDirig.value.trim()){
+    var exist = dirigido.find(e => e.nombre.toLowerCase() == newDirig.value.trim().toLowerCase());
+    if (!exist){
+      $('#feedDirigido').attr('hidden', true);
+      $('#formEquip').removeClass('has-danger');
+
+      window.axios.post(gURL + 'api/dirigido', {nombre: newDirig.value})
+      .then(({data}) => {
+        newDirig.value = '';
+        var divTemp = createCheck(data.nombre, data.id, "dirigido", true);
+        dirigido.length % 2 == 0 ? $('#colDirigido1'). append(divTemp) : $('#colDirigido2').append(divTemp);
+        dirigido.push(data);
+      })
+      .catch(err => console.log(err));
+    }
+    else{
+      $('#feedDirigido').removeAttr('hidden').text('El dirigido que tratas de agregar ya existe');
+      $('#formDirigido').addClass('has-danger');
+    }
+  }
+  else{
+    $('#feedDirigido').removeAttr('hidden').text('Ingresa un dirigido');
+    $('#formDirigido').addClass('has-danger');
+  }
+  newDirig.focus();
+})
+
 //Agregar nuevo equipamiento
 $('#btnOtroEquip').on('click', () => {
   var newEquip = get('txtOtroEquip');

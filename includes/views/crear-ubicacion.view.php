@@ -1,4 +1,4 @@
-  </div>
+</div>
 <div class="col-xl-9 col-lg-8 col-md-8 col-xs-12 main">
 	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>public/css/bootstrap-tagsinput.css">
 	<style>
@@ -90,6 +90,18 @@
 						<div class="col-12 col-sm-6 col-md-6" id="colDirigido1">  </div>
 						<div class="col-12 col-sm-6 col-md-6" id="colDirigido2">  </div>
 					</div>
+					<div class="row">
+						<div class="col-12 col-sm-12 col-md-12">
+							<label for="otroDirigido">Otro:</label>
+							<div class="input-group">
+					      <input type="text" maxlength="70" class="form-control form-control-danger" name="otroDirigido" id="txtOtroDirig" placeholder="Otro tipo de dirigido">
+					      <span class="input-group-btn">
+					        <button class="btn btn-success" id="btnOtroDirig" type="button">Agregar</button>
+					      </span><br>
+					    </div>
+					    <div class="form-control-feedback" hidden id="feedbackDirig"></div>
+						</div>
+			    </div>
 				</fieldset>
 				<span class="form-text text-muted"><i>&nbsp;Seleccionar el tipo de usuario que puede solicitar el espacio</i></span>
 				<div class="form-group" id="divDirigido">
