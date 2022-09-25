@@ -13,7 +13,7 @@ class Ubicacion extends General {
   public $clasificadores; // null, [String]
   public $idSitio;
   public $portada;
-  public $idTipo; //Relación 1 a 1 con la tabla tipo de ubicación
+  public $idTipo; //Relaciï¿½n 1 a 1 con la tabla tipo de ubicaciï¿½n
   public $visible; // 0 = no visible, 1 = visible
   public $estatus; // 0 = guardada, 1 = enviada, -1 = Elimindada
   public $aceptado; // 0 = rechazado, 1 = aceptado, -1 = indefinido
@@ -57,7 +57,7 @@ class Ubicacion extends General {
       $instance->idPadre = -1;
       $instance->idHijo = -1;
       $instance->fechaEdicion = date('Y-m-d h:i:s');
-      $instance->fechaAprobacion = date('1970-01-01 00:00:00');
+      $instance->fechaAprobacion = date('1970-01-01 00:00:01');
       // $delegacion = self::getIdDelegacionByIdSitio($object->idSitio);
       $instance->idDelegacion = $object->idDelegacion;
 
@@ -174,7 +174,7 @@ class Ubicacion extends General {
     return [ ];
   }
 
-  //Devuelve todas las que están pendientes por validar
+  //Devuelve todas las que estï¿½n pendientes por validar
   public static function getAllPendingByValidador ($idSitio) { // Esto debe de ser idSitio = $idSitio
     if (is_numeric($idSitio)) {
       //Regresa las enviadas (1) e indeterminadas (-1) del sitio
@@ -189,7 +189,7 @@ class Ubicacion extends General {
   public static function getAllByValidador($idSitio) { // Esto debe de ser idSitio = $idSitio
     if (is_numeric($idSitio)) {
       //Regresa las enviadas (1) e indeterminadas (-1) del sitio
-      //También devuelve las que ya fueron aceptadas pero que se cambiaron a guardadas
+      //Tambiï¿½n devuelve las que ya fueron aceptadas pero que se cambiaron a guardadas
       $sql = 'SELECT * FROM ubicaciones WHERE'
       .' idPadre = -1 AND idSitio = '.$idSitio.' AND (estatus = 1 OR (estatus = 0 AND aceptado != -1))'
       .' ORDER BY estatus DESC';
@@ -276,8 +276,9 @@ class Ubicacion extends General {
     $sql = 'INSERT INTO ubicaciones (etiqueta, cupo, titulo, latitud, longitud, resumen, descripcion, detalles, clasificadores, portada, idTipo, idSitio, idPadre, idHijo, fechaEdicion, fechaAprobacion, idDelegacion, agrupador) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
     $id = self::executeInsert($sql,$this->etiqueta, $this->cupo, $this->titulo, $this->latitud, $this->longitud, $this->resumen, $this->descripcion, $this->detalles, $this->clasificadores, $this->portada, $this->idTipo, $this->idSitio, $this->idPadre, $this->idHijo,$this->fechaEdicion, $this->fechaAprobacion, $this->idDelegacion, $this->agrupador);
     if ($id) {
-      $this->id = $id;
-      return true;
+      //$this->id = $id;
+      //return true;
+      return $id;
     }
     return false;
   }
