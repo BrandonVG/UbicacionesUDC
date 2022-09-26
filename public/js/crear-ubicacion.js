@@ -310,7 +310,8 @@ $('#btnGuardar').on('click', () => {
         $('#divErrors').addClass('has-danger');
         $('#feedbackErrors').html('<p>- Hubo un problema al guardar la ubicación, por favor inténtalo nuevamente</p>');
         $('#feedbackErrors').removeAttr('hidden');
-        console.error(err)
+        console.error(err);
+        console.error(err.message);
       });   
   }
   else {

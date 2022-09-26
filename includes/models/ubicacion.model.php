@@ -276,9 +276,8 @@ class Ubicacion extends General {
     $sql = 'INSERT INTO ubicaciones (etiqueta, cupo, titulo, latitud, longitud, resumen, descripcion, detalles, clasificadores, portada, idTipo, idSitio, idPadre, idHijo, fechaEdicion, fechaAprobacion, idDelegacion, agrupador) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
     $id = self::executeInsert($sql,$this->etiqueta, $this->cupo, $this->titulo, $this->latitud, $this->longitud, $this->resumen, $this->descripcion, $this->detalles, $this->clasificadores, $this->portada, $this->idTipo, $this->idSitio, $this->idPadre, $this->idHijo,$this->fechaEdicion, $this->fechaAprobacion, $this->idDelegacion, $this->agrupador);
     if ($id) {
-      //$this->id = $id;
-      //return true;
-      return $id;
+      $this->id = $id;
+      return true;
     }
     return false;
   }
