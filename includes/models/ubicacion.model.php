@@ -114,7 +114,7 @@ class Ubicacion extends General {
       throw new Exception("Error al crear objeto hijo Ubicacion", 400);
   }
 
-  public function getUbicacionUpdate ($object, $id) {
+  public static function getUbicacionUpdate ($object, $id) {
     $instance = new self();
     if (isset($object->etiqueta) &&
       isset($object->cupo) &&
@@ -340,7 +340,7 @@ class Ubicacion extends General {
     return self::executeQuery($sql, $idHijo, $id);
   }
   
-  public static function insertToHistorico($object) {
+  public function insertToHistorico($object) {
     $object->visible = isset($object->visible) ? $object->visible : 0;
     $object->estatus = isset($object->estatus) ? $object->estatus : 0;
     $object->estatus = isset($object->aceptado) ? $object->aceptado : -1;

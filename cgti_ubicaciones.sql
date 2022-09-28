@@ -86,7 +86,6 @@ CREATE TABLE `historico` (
   `detalles` varchar(200) NOT NULL,
   `clasificadores` varchar(500) NOT NULL,
   `idSitio` int(11) NOT NULL,
-  `dirigido` varchar(75) NOT NULL,
   `portada` varchar(50) NOT NULL,
   `idTipo` int(11) NOT NULL,
   `estatus` tinyint(4) NOT NULL DEFAULT '0',

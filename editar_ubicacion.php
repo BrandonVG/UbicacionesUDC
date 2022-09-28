@@ -9,8 +9,7 @@
     die();
   }*/
 
-  // $ruta = array('<li class="active">PRUEBA</li>');
-  $ruta = null;
+  $ruta = array('<li class="active">Editar ubicaci&oacute;n</li>');
   $titulo = "EDITAR UBICACI&Oacute;N";
   $id = $_GET['id'] ?? false;
 

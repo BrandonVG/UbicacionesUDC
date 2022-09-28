@@ -213,7 +213,7 @@ switch ($method) {
           echo json_encode(array('err' => utf8_encode($ex->getMessage())));
           die();
         }
-        Ubicacion::insertToHistorico(Ubicacion::getById($id,'ubicaciones'));
+        $ubicacion->insertToHistorico(Ubicacion::getById($id,'ubicaciones'));
         $result = $ubicacion->update();
         if ($result) {
           //Save into LOG
