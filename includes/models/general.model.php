@@ -43,7 +43,7 @@
 
 		abstract public function update();
 
-		protected function executeQuery($sql, ...$params) {
+		protected static function executeQuery($sql, ...$params) {
 			$types = '';
 			$values = '';
 			$i = 0;

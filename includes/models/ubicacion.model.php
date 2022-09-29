@@ -222,7 +222,6 @@ class Ubicacion extends General {
       INNER JOIN v_dependencias ON ubicaciones.idSitio = v_dependencias.id_sitio 
       INNER JOIN tiposUbicaciones ON ubicaciones.idTipo = tiposUbicaciones.id 
       WHERE ubicaciones.id = '.$id;
-      
       return self::getObjectBySql($sql);
   }
 
@@ -381,6 +380,12 @@ class Ubicacion extends General {
     $sql = "SELECT correo FROM v_dependencia_usuarios WHERE id_sitio = ".$idSitio." AND rol ='E'";
 
     return self::getArrayBySql($sql);
+  }
+
+  public static function getUrlSitio($idSitio){
+    $sql ="SELECT url FROM v_dependencias WHERE id_sitio =".$idSitio;
+    
+    return self::getObjectBySql($sql);
   }
 }
 ?>
