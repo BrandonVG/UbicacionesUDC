@@ -2,12 +2,11 @@
 	require_once('includes/config.inc.php');
   require_once('includes/inc.session.php');
 
-  /*if($_SESSION['rol'] == 3) { 
+  if (!isset($_GET['sitio']) || $_GET['sitio'] != $_SESSION['url'] || $_SESSION['rol'] == 3) {
     http_response_code(403);
     echo "<div style='background-color: #f0ad4e; padding: 15px 20px; text-align: center; color: #fff; font-family: \".Helvetica Neue\",Helvetica,Arial,sans-serif;'><img src='https://wayf.ucol.mx/imglogin/UdClog.png'><br>Correo ".$_SESSION['uCorreo']." NO tiene permiso en sitio<br> <a href='".$url."'>Regresar al inicio</a> </div>";
-    session_unset();
     die();
-  }*/
+  }
 
   $ruta = array('<li class="active">Editar ubicaci&oacute;n</li>');
   $titulo = "EDITAR UBICACI&Oacute;N";

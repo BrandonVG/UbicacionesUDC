@@ -81,7 +81,7 @@
                   }
                 }
                 if($as->isAuthenticated()) {
-                  // if() {//Editor
+                  if($_SESSION['rol'] == 2 || $_SESSION['rol'] == 1) {//Editor
               ?>
                 <li>
                    <p href="#">Editor</p>
@@ -95,8 +95,8 @@
                 </li>
               <?php  
                   }
-                //}
+                }
               ?>
-            <li><a href="/ubicaciones">Inicio</a></li>
+            <li><a href="<?php echo $url.$_SESSION['url']; ?>">Inicio</a></li></li>
 	        </ul>
 	      </div>

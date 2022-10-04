@@ -272,9 +272,9 @@ CREATE TABLE sitio_usuario(
     `activo` boolean,
     `correo` varchar(70),
     `id_sitio` int,
-    `rol` int,
-    `tipo` int,
+    `rol` varchar(70),
+    `tipo` varchar(70),
     `reconocido` varchar(70),
     `subdominio` varchar(70),
-    `permiso` int,
+    `permiso` varchar(70),
     `s_delegacion` varchar(70))ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
