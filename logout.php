@@ -7,9 +7,7 @@
 	if ($as ->isAuthenticated()){
 		//echo "session true";
 		if(isset($_SESSION)){
-			//session_unset();
-			session_unset($_SESSION["salir"]);
-			//$as->logout("http://cenedic3.ucol.mx/saestuc/");
+			session_unset();
 		}
 		
 		$as->logout($url.'index.php');

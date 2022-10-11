@@ -11,7 +11,7 @@
 		<div id="path">
       <ol class="breadcrumb">
         <li>Usted est&aacute; en:</li>
-        <li><a href="<?php echo $url ?>">Inicio</a></li>
+        <li><a href="<?php echo $url.$_SESSION["url"] ?>">Inicio</a></li>
         <?php  
         	for ($i=0; $i < count($ruta); $i++) { 
         		echo $ruta[$i];//En el archivo .php que manda llamar al header y a la vista se declara el array con el li y a
@@ -24,7 +24,7 @@
 	      <?php if($as->isAuthenticated()) { ?> <!--Validar sesión-->
 		      <li>Bienvenido(a):</li>
 	        <li class="user-name"><?php echo $_SESSION['uNombre']; ?></li>
-	        <li><a href="<?php //echo $url.'logout.php'; ?>">Salir</a></li>
+	        <li><a href="<?php echo $url.'logout.php'; ?>">Salir</a></li>
 	      <?php } else {
           echo '<li> <a href="'.$url.'login.php?urlAnterior='.$_SERVER['REQUEST_URI'].'">Iniciar sesión</a> </li>';
         } ?>

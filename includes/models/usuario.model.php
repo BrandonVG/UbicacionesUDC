@@ -66,8 +66,8 @@
       return $affected_rows;
     }
 
-    public static function getInfoFromFederada($correo, $sitio) {
-      $sql = "SELECT * FROM v_dependencia_usuarios WHERE correo = '".$correo."'AND url = '".$sitio."'";
+    public static function getInfoFromFederada($correo) {
+      $sql = "SELECT * FROM v_dependencia_usuarios WHERE correo = '".$correo."'";
 
       return self::getObjectBySql($sql);
     }

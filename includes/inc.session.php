@@ -8,7 +8,7 @@
 		
 	require_once(MODEL_PATH.'usuario.model.php');
 
-	$as->requireAuth();	
+	$as->requireAuth();
 	   
 	$attributes = $as->getAttributes();
 	$_SESSION['uCorreo'] = $attributes['uCorreo'][0];
@@ -16,7 +16,7 @@
 
 
 	
-	$usuario = Usuario::getInfoFromFederada($_SESSION['uCorreo'], $_GET['sitio']);	//Si no est� en esta vista es porque no tiene permisos
+	$usuario = Usuario::getInfoFromFederada($_SESSION['uCorreo']);	//Si no est� en esta vista es porque no tiene permisos
 
 	if($_SESSION['uCorreo'] == 'gcruz@ucol.mx')
 		$rol = 1;
@@ -30,7 +30,7 @@
 		$_SESSION['rol'] = $rol;
 	}
 	else{
-		echo "<div style='background-color: #f0ad4e; padding: 15px 20px; text-align: center; color: #fff; font-family: \".Helvetica Neue\",Helvetica,Arial,sans-serif;'><img src='https://wayf.ucol.mx/imglogin/UdClog.png'><br>Correo ".$_SESSION['uCorreo']." NO tiene permiso en sitio<br>	<a href='".$url."'>Regresar al inicio</a> </div>";
+		echo "<div style='background-color: #f0ad4e; padding: 15px 20px; text-align: center; color: #fff; font-family: \".Helvetica Neue\",Helvetica,Arial,sans-serif;'><img src='https://wayf.ucol.mx/imglogin/UdClog.png'><br>Correo ".$_SESSION['uCorreo']." NO tiene permiso en sitio<br>	<a href='".$url.$_SESSION["url"]."'>Regresar al inicio</a> </div>";
 		die();
 	}
 ?>
