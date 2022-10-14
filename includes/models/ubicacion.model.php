@@ -203,7 +203,7 @@ class Ubicacion extends General {
     $sql = 'SELECT ubicaciones.*, v_dependencias.titulo AS nombreSitio'
       .' FROM ubicaciones'
       .' INNER JOIN v_dependencias ON ubicaciones.idSitio = v_dependencias.id_sitio'
-      .' WHERE ubicaciones.aceptado = 1 AND ubicaciones.visible = 1';
+      .' WHERE ubicaciones.aceptado = 1 AND ubicaciones.visible = 1 AND ubicaciones.estatus > -1';
     return self::getArrayBySql($sql);
   }
 
@@ -339,7 +339,7 @@ class Ubicacion extends General {
     return self::executeQuery($sql, $idHijo, $id);
   }
   
-  public function insertToHistorico($object) {
+  public static function insertToHistorico($object) {
     $object->visible = isset($object->visible) ? $object->visible : 0;
     $object->estatus = isset($object->estatus) ? $object->estatus : 0;
     $object->estatus = isset($object->aceptado) ? $object->aceptado : -1;

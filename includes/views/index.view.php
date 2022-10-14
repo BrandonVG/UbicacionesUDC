@@ -1,4 +1,7 @@
-    <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>public/css/bootstrap-tagsinput.css">
+<?php 
+	$imagenDir = EN_PRODUCCION ? '//'.$_SERVER['SERVER_NAME'].'/content/ubicaciones/portadas/' : '//'.$_SERVER['SERVER_NAME'].'/ubicaciones/assets/img/ubicaciones/portadas/';
+?>
+		<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>public/css/bootstrap-tagsinput.css">
 	<style> 
 		.bootstrap-tagsinput {width:? 100% !important; }
 		#sidebar {
@@ -131,8 +134,8 @@
     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 card-ubicacion" id="card-<?php echo $ubicacion->id; ?>">
     		<div class="card">
 	    		<div class="card-img-top">
-						<img data-holder-rendered="true" src="<?php echo '//'.$_SERVER['SERVER_NAME'].'/content/ubicaciones/portadas/'.$ubicacion->portada; ?>">
-						<div class="overlay_fondo_banner" style="background-image: url(<?php echo '//'.$_SERVER['SERVER_NAME'].'/content/ubicaciones/portadas/'.$ubicacion->portada; ?>);"></div>
+						<img data-holder-rendered="true" src="<?php echo $imagenDir.$ubicacion->portada; ?>">
+						<div class="overlay_fondo_banner" style="background-image: url(<?php echo $imagenDir.$ubicacion->portada; ?>);"></div>
 	    		</div>  
 			    <div class="card-block">
 			        <h6 class="card-title"><a href="<?php echo $url.'ver-ubicacion/'.$ubicacion->id; ?>"><?php echo $ubicacion->titulo; ?></a></h6>    

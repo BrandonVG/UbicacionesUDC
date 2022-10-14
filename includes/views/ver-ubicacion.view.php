@@ -1,6 +1,7 @@
 </div>
 <?php 
 	$agenda = EN_PRODUCCION ? 'agenda' : 'agendaea';
+	$imagenDir = EN_PRODUCCION ? '//'.$_SERVER['SERVER_NAME'].'/content/ubicaciones/portadas/' : '//'.$_SERVER['SERVER_NAME'].'/ubicaciones/assets/img/ubicaciones/portadas/';
 ?>
 <style type="text/css">
     #cont_tags .label {
@@ -61,7 +62,7 @@
   $('#sidebar').attr('hidden',true);
 </script>
 <div class="col-xl-3 col-lg-4 col-md-4 col-xs-12 sidebar">
-	<img class="img-responsive" src="<?php echo '//'.$_SERVER['SERVER_NAME'].'/content/ubicaciones/portadas/'.$ubicacion->portada; ?>">
+	<img class="img-responsive" src="<?php echo $imagenDir.$ubicacion->portada; ?>">
 	<div class="clearfix">&nbsp;</div>
 	<div class="row">
 		<div class="col-sm-6">

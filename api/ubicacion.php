@@ -4,7 +4,7 @@ require_once('../includes/config.inc.php');
 header('Content-Type: application/json');
 
 $method = $_SERVER['REQUEST_METHOD'];
-$path = EN_PRODUCCION ? '../../../../demo/cms/content/ubicaciones/portadas/' : '../../content/ubicaciones/portadas/';
+$path = EN_PRODUCCION ? '../../../../demo/cms/content/ubicaciones/portadas/' : '../assets/img/ubicaciones/portadas/';
 
 if(!$as->isAuthenticated() && $method != 'GET' && !($method == 'POST' && isset($_GET['tags']))) {
   http_response_code(403);
