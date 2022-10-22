@@ -1,6 +1,6 @@
 </div>
 <?php 
-	$agenda = EN_PRODUCCION ? 'agenda' : 'agendaea';
+	$agenda = EN_PRODUCCION ? 'agendaea' : 'ubicaciones/agenda';
 	$imagenDir = EN_PRODUCCION ? '//'.$_SERVER['SERVER_NAME'].'/content/ubicaciones/portadas/' : '//'.$_SERVER['SERVER_NAME'].'/ubicaciones/assets/img/ubicaciones/portadas/';
 ?>
 <style type="text/css">
