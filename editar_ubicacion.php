@@ -19,7 +19,7 @@
         $padre = ($ubicacion->aceptado == 1 && $ubicacion->idHijo == -1) ? 'true' : 'false';
         echo '<script>window.id = '.$id.';window.crearHijo = '.$padre.';window.sitio = "'.$_SESSION['url'].'";</script>';
         $_SESSION["Id_Modulo"] = $_SESSION['idSitio'];
-        $_SESSION["fck_folder"] ="ubicaciones/".$_SESSION["Id_Modulo"]."/";
+        $_SESSION["fck_folder"] = EN_PRODUCCION ? "ubicaciones/".$_SESSION["Id_Modulo"]."/" : "assets/img/ubicaciones/content/".$_SESSION["Id_Modulo"]."/";
         $_SESSION['pkusr']=$_SESSION['uCorreo']; //Para permitir upload
         require_once(VIEW_PATH.'header.view.php');
         $defaultDelegacion = (int)$ubicacion->idDelegacion;
