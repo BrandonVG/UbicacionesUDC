@@ -802,7 +802,12 @@
      (i - 1) % 2 == 0 ? $('#colDelegacion1').append(divTemp) : $('#colDelegacion2').append(divTemp);
    }
    
-   editor = CKEDITOR.replace('txtDescripcion');
+   editor = CKEDITOR.replace('txtDescripcion',{
+    filebrowserBrowseUrl: 'ubicaciones/includes/editor/ckfinder/ckfinder.html',
+    filebrowserImageBrowseUrl: 'ubicaciones/includes/editor/ckfinder/ckfinder.html?type=Images',
+    filebrowserUploadUrl: 'ubicaciones/includes/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+    filebrowserImageUploadUrl: 'ubicaciones/includes/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+   });
    editorResumen = CKEDITOR.replace('txtResumen', simpleCkeditorConfig);
    editorDetalles = CKEDITOR.replace('txtDetalles', simpleCkeditorConfig);
  
