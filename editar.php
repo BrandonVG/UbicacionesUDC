@@ -3,7 +3,7 @@
   require_once('includes/inc.session.php');
   require_once(LIB_PATH.'responseError.php');
 
-  if (!isset($_GET['sitio']) || $_GET['sitio'] != $_SESSION['url']) 
+  if (!isset($_GET['sitio']) || $_GET['sitio'] != $_SESSION['url'] || $_SESSION['rol'] == 3) 
     responseError(403);
 
   $ruta = array('<li>Editor</li>');
